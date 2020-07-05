@@ -1,3 +1,7 @@
+// This file imports from both ./queries and ./mutations and forms a graphql schema
+// to be exported to and used by setup/graphql.js. We will not need to change this
+// file for the project. - Ryan
+
 // Imports
 import { GraphQLSchema } from 'graphql'
 

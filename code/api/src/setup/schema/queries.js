@@ -1,3 +1,7 @@
+// This file aggregates graphql queries for all resources. We will need to add
+// to this file if we add a table in the database if we plan on reading records
+// through graphql. Exports out to ./index.js - Ryan
+
 // Imports
 import { GraphQLObjectType } from 'graphql'
 

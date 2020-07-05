@@ -1,3 +1,7 @@
+// This file aggregates graphql mutations for all resources. We will need to add
+// to this file if we add a table in the database only if we plan on changing rescords
+// through graphql. Exports out to ./index.js - Ryan
+
 // Imports
 import { GraphQLObjectType } from 'graphql'
 
