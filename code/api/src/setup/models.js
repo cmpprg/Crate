@@ -1,3 +1,8 @@
+// This file, I believe, activates each models sequelize model schema imported from
+// modules/<resource>/model by linking them with the sequelize database connection
+// imported from ./database.js. If we add a new table for 'fashion survey' we will
+// need to connect its model schema to the database here.
+
 // Imports
 import Sequelize from 'sequelize'
 
