@@ -1,3 +1,6 @@
+// Loads up necessary node modules and sets them as middleware on express server.
+// There will be no need to change this file unless we add a new node module for some reasone - Ryan
+
 // Imports
 import express from 'express'
 import path from 'path'
