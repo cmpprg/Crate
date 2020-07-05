@@ -5,13 +5,13 @@ import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 import { UserType, UserLoginType, UserGenderType } from './types'
 import { getAll, getById, login, getGenders } from './resolvers'
 
-// All
+// All, returns all users
 export const users = {
   type: new GraphQLList(UserType),
   resolve: getAll
 }
 
-// By ID
+// By ID, accessing a user just by id
 export const user = {
   type: UserType,
   args: {
@@ -19,8 +19,9 @@ export const user = {
   },
   resolve: getById
 }
+// Should be able to access users, style_survey, style just from the getById resolver
 
-// Auth
+// Auth, logging a user in with email and password, calls on the login resolve
 export const userLogin = {
   type: UserLoginType,
   args: {
@@ -42,7 +43,7 @@ export const userLogin = {
   resolve: login
 }
 
-// Genders
+// Genders, returns a user gender type object, calling on the getGenders resolver
 export const userGenders = {
   type: new GraphQLList(UserGenderType),
   resolve: getGenders

@@ -33,3 +33,6 @@ module.exports = {
     return queryInterface.dropTable('users');
   }
 }
+
+// Will need to add a migration for new resource style-survey and migration for adding a column
+// on user for stylesurvery id. 

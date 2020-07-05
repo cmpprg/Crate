@@ -1,7 +1,7 @@
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
-// User type
+// User type, defines a type to be returned with all the possible attributes of a user
 const UserType = new GraphQLObjectType({
   name: 'user',
   description: 'User type',
@@ -16,8 +16,10 @@ const UserType = new GraphQLObjectType({
     updatedAt: { type: GraphQLString }
   })
 })
+// Need to add in style_survey as a GraphQLInt
 
-// User Login type
+
+// User Login type, establishes what fields nees to be submitted to login a user
 const UserLoginType = new GraphQLObjectType({
   name: 'userAuth',
   description: 'User Authentication Type',
@@ -28,7 +30,8 @@ const UserLoginType = new GraphQLObjectType({
   })
 })
 
-// User Gender type
+// User Gender type, defines a user gender type
+
 const UserGenderType = new GraphQLObjectType({
   name: 'userGender',
   description: 'User Gender Type',

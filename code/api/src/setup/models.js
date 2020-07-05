@@ -10,6 +10,7 @@ const models = {
   Crate: databaseConnection.import('../modules/crate/model'),
   Subscription: databaseConnection.import('../modules/subscription/model')
 }
+// Need to add in style_survey model, import from database
 
 Object.keys(models).forEach(modelName => {
   if (models[modelName].associate) {
@@ -21,3 +22,5 @@ models.sequelize = databaseConnection
 models.Sequelize = Sequelize
 
 export default models
+
+// Makes all the info in the database available in models to use sequelize on
