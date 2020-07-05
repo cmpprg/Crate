@@ -1,3 +1,6 @@
+// This file imports mutation functionality from ./resolvers and objectifies them
+// for use in graphql schema. Exports out to setup/schema/mutations. - Ryan
+
 // Imports
 import { GraphQLString, GraphQLInt } from 'graphql'
 

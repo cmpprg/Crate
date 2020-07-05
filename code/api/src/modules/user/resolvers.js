@@ -1,3 +1,6 @@
+// This file defines all functionality necessary for User graphql queries and mutations.
+// Exports out to ./mutations and ./query be formatted properly and sent out to schema. - Ryan
+
 // Imports
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'

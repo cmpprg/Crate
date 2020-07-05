@@ -1,3 +1,10 @@
+// This file defines the User Object for graphql. I think it is called a type, but
+// it is a simple schema that includes all potential attributes for a record that
+// can be queried or mutated. This file has also defined many user types depending on the
+// capacity for which the user table is being used (logging in, checking gender, or
+// general query / mutation.) If we need to add an attribute to User it will need
+// to be added here. - Ryan 
+
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 

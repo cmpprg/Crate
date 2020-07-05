@@ -1,3 +1,6 @@
+// This file imports query functionality from ./resolvers.js and objectifies them
+// for use in graphql schema. Exports out to setup/schema/queries. - Ryan
+
 // Imports
 import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 

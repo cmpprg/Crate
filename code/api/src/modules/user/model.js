@@ -1,3 +1,6 @@
+// This file sets up the sequelize schema for the users table of our database, Unless
+// We add an attribute to User we will not need to change this file. - Ryan
+
 'use strict'
 
 // User
@@ -17,6 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   })
 
+  // This associates a hasMany subscriptions relationship to the User model. - Ryan
   User.associate = function(models) {
     User.hasMany(models.Subscription)
   }
