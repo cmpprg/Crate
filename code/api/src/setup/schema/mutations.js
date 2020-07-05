@@ -16,6 +16,8 @@ const mutation = new GraphQLObjectType({
   name: 'mutations',
   description: 'API Mutations [Create, Update, Delete]',
 
+  // spreads defined mutation types and resolvers into the fields option of the
+  // GraphQLObjectType. - Ryan
   fields: {
     ...user,
     ...product,

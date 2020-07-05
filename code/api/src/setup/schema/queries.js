@@ -16,6 +16,8 @@ const query = new GraphQLObjectType({
   name: 'query',
   description: 'API Queries [Read]',
 
+  // spreads defined query types and resolvers into the fields option of the
+  // GraphQLObjectType. - Ryan
   fields: () => ({
     ...user,
     ...product,
