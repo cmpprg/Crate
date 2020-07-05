@@ -8,6 +8,7 @@ import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 import { UserType, UserLoginType, UserGenderType } from './types'
 import { getAll, getById, login, getGenders } from './resolvers'
 
+// When 'users' is called upon in a graphql query 'getAll' resolver will activate. - Ryan
 // All
 export const users = {
   type: new GraphQLList(UserType),

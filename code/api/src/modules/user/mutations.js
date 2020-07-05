@@ -8,6 +8,7 @@ import { GraphQLString, GraphQLInt } from 'graphql'
 import { UserType } from './types'
 import { create, remove } from './resolvers'
 
+//When FE does a post to graphql userSignup it will expect these arguments and run 'create' resolver - Ryan.
 // Create
 export const userSignup = {
   type: UserType,
