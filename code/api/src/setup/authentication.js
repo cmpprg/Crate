@@ -1,3 +1,7 @@
+// This file takes care of user authentication when making requests, don't quite
+// know how it is working, but I don't believe we will need to change it at all
+// for this project. - Ryan
+
 // Imports
 import jwt from 'jsonwebtoken'
 import serverConfig from '../config/server.json'
