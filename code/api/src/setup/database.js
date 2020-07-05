@@ -1,3 +1,6 @@
+// This file sets up the connects the database to our app using Sequelize as the ORM.
+// No need to change this file for our project - Ryan
+
 // Imports
 import { Sequelize } from 'sequelize'
 
