@@ -1,3 +1,5 @@
+// This is the main file from which everything else runs!! - Ryan
+
 // Imports
 import express from 'express'
 
@@ -11,13 +13,13 @@ import setupStartServer from './setup/start-server'
 const server = express()
 
 // Setup load modules
-setupLoadModules(server)
+setupLoadModules(server) //we don't need to mess with this, unless we add other node modules - Ryan
 
 // Setup uploads
-setupUpload(server)
+setupUpload(server) //I don't think we nee to mess with this - Ryan
 
 // Setup GraphQL
-setupGraphQL(server)
+setupGraphQL(server) //<------THIS IS WHERE WE WILL LIVE ON THIS PROJECT, I SUSPECT! - Ryan
 
 // Start server
-setupStartServer(server)
+setupStartServer(server) //just starts a server nothing more. - Ryan
