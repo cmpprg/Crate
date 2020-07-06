@@ -2,7 +2,9 @@
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
 
-// User type, defines a type to be returned with all the possible attributes of a user
+// User type, defines a graphql type to be returned with all the possible attributes
+// of that type
+
 const UserType = new GraphQLObjectType({
   name: 'user',
   description: 'User type',
