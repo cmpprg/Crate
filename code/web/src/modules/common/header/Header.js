@@ -1,3 +1,5 @@
+
+//if we end up making a button that goes direct to style survey we will need to add that as a menu item 
 // Imports
 import React from 'react'
 import PropTypes from 'prop-types'

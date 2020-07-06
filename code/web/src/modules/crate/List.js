@@ -1,3 +1,5 @@
+//I do not think anything will need to change here as we are not changing actual crate list - Olivia
+
 // Imports
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
