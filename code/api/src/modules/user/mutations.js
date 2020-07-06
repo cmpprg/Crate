@@ -6,6 +6,9 @@ import { UserType } from './types'
 import { create, remove } from './resolvers'
 
 // Create, posting a new user to the database
+// the args are what the request needs to contant, for a user to signup the post
+// request must include name, email, and password. And its going to create a UserType.
+// These const's call upon different resolvers that actually complete the action.
 export const userSignup = {
   type: UserType,
   args: {

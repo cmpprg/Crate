@@ -1,6 +1,7 @@
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
+
 // User type, defines a type to be returned with all the possible attributes of a user
 const UserType = new GraphQLObjectType({
   name: 'user',
@@ -19,7 +20,7 @@ const UserType = new GraphQLObjectType({
 // Need to add in style_survey as a GraphQLInt
 
 
-// User Login type, establishes what fields nees to be submitted to login a user
+// User Login type, establising what fields a logged in user has.
 const UserLoginType = new GraphQLObjectType({
   name: 'userAuth',
   description: 'User Authentication Type',

@@ -28,3 +28,5 @@ export default {
     auth: true
   }
 }
+
+// Add in component for style survey with auth true

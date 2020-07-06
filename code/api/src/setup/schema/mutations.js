@@ -8,7 +8,10 @@ import * as crate from '../../modules/crate/mutations'
 import * as subscription from '../../modules/subscription/mutations'
 // need to import in style_surveys as well
 
-// Mutation, creating a way for our database to be updated/posted to 
+// Mutation, creating a way for our graphql database to be updated/posted to.
+ // makes these fields accesible for mutation when we create our graphql schema
+ // in index.js
+
 const mutation = new GraphQLObjectType({
   name: 'mutations',
   description: 'API Mutations [Create, Update, Delete]',

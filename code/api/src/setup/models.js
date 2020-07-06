@@ -23,4 +23,4 @@ models.Sequelize = Sequelize
 
 export default models
 
-// Makes all the info in the database available in models to use sequelize on
+// Makes all the info in the database available to export as models

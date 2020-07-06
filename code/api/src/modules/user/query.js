@@ -5,6 +5,8 @@ import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 import { UserType, UserLoginType, UserGenderType } from './types'
 import { getAll, getById, login, getGenders } from './resolvers'
 
+// Querys are essentially the same as get's. Each query has a name with an
+// expected incoming format and then calls to the appropriate resolver. 
 // All, returns all users
 export const users = {
   type: new GraphQLList(UserType),

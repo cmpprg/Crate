@@ -1,5 +1,6 @@
 'use strict'
-// This file set up our user model, attributes and relationship to be created
+// This file set up our user model with attributes and relationship to be created in our database,
+// accessible via sequelize. (kind of like active record for ruby?)
 // User
 // Need to add in style_survey_id with DataTypes.INTEGER as an attribute
 
