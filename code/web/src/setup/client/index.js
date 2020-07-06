@@ -33,6 +33,7 @@ const Client = () => (
   </Provider>
 )
 
+//loads the app will probably not need to change this
 // Mount client app
 window.onload = () => {
   hydrate(

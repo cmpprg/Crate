@@ -8,6 +8,10 @@ import Layout from '../../modules/common/Layout'
 import NotFound from '../../modules/common/NotFound'
 import RoutePrivate from '../../modules/auth/RoutePrivate'
 
+//two routes-- private for logged in user
+// route for public not logged in
+// will probably not need to change this
+
 const App = () => (
   <Layout>
     <Switch>
