@@ -66,7 +66,7 @@ let user;
       .get('/')
       .send({ query: `
         {
-          userLogin(email: "user@crate.com", password: "123456"){
+          userLogin(email: "${user.email}", password: "123456"){
             user {
               id
               name
@@ -84,7 +84,7 @@ let user;
       .get('/')
       .send({ query: `
         {
-          userLogin(email: "user@crate.com", password: "456"){
+          userLogin(email: "${user.email}", password: "456"){
             user {
               id
               name

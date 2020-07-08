@@ -33,8 +33,8 @@ describe ("user mutations", () => {
           }`
        })
       .expect(200);
-      console.log(response.body.data);
-      // expect(response.body.data.userSignUp.name).toEqual("travis");
+
+      expect(response.body.data.userSignup.name).toEqual("travis");
   });
 
 });
