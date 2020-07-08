@@ -1,3 +1,6 @@
+//Once the style is determined for user after style survey is submitted then we will render
+// a p tag saying "Your Style is ----" in this component - Olivia
+
 // Imports
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
@@ -26,6 +29,7 @@ class Subscriptions extends PureComponent {
   // Runs on client only
   componentDidMount() {
     this.props.getListByUser()
+    
   }
 
   render() {

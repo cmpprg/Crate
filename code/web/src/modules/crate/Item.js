@@ -1,3 +1,5 @@
+//I think we will need to change the onclick here to have a conditional on button to check if the user has a style surver if yes it will route to subscription list. if no it will route to style survey
+
 // Imports
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
