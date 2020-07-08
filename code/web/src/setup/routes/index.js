@@ -10,6 +10,7 @@ import crate from './crate'
 export const routes = Object.assign(admin, home, user, product, crate)
 
 // API Routes
+//ASK BE ABOUT API ROUTES AND LOOK FURTHER INTO THESE
 export const routeApi = APP_URL_API
 
 // Image
