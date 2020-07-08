@@ -7,6 +7,7 @@ import Button from '../../ui/button'
 import { grey, grey2 } from '../../ui/common/colors'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
+import CategoryCards from './CategoryCards';
 
 
 class StyleSurvey extends Component {
@@ -18,6 +19,7 @@ class StyleSurvey extends Component {
 //potentially simplify categories to array of strings for backend??
 //potentially add style to state
     this.state = {
+      categories: ['tops', 'bottoms', 'dresses', 'shoes', 'accessories'],
       tops: '',
       bottoms: '',
       dresses: '',
@@ -30,9 +32,14 @@ class StyleSurvey extends Component {
     console.log(this.props)
   }
 
-
-
   render() {
+
+    const categoryCards = this.state.categories.map(category => (
+      <div style={{ margin: '5em', float: 'left' }}>
+        <CategoryCards category={category}/>
+      </div>
+    ))
+
     return (
       <div>
       {/* SEO */}
@@ -47,6 +54,12 @@ class StyleSurvey extends Component {
       </Grid>
 
       <Grid>
+          <GridCell>
+            { categoryCards }
+          </GridCell>
+        </Grid>
+
+      {/* <Grid>
         <GridCell style={{ padding: '2em', textAlign: 'center' }}>
           <H4 style={{ marginBottom: '0.5em' }}>Tops</H4>
         </GridCell>
@@ -62,7 +75,7 @@ class StyleSurvey extends Component {
         <GridCell style={{ padding: '2em', textAlign: 'center' }}>
           <H4 style={{ marginBottom: '0.5em' }}>Accessories</H4>
         </GridCell>
-      </Grid>
+      </Grid> */}
 
       </div>
     )

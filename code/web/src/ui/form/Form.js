@@ -5,10 +5,8 @@ import React from 'react'
 import { level1 } from '../common/shadows'
 
 // Component
-const Card = (props) => {
-
+const Form = (props) => {
   const { children, ...other } = props
-  console.log('whaaat?', props)
 
   return (
     <div {...other}>
@@ -27,4 +25,4 @@ const Card = (props) => {
   )
 }
 
-export default Card
+export default Form
