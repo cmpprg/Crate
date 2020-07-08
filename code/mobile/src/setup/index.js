@@ -12,7 +12,7 @@ import { setUser, setUserLocally } from '../modules/user/api/actions'
 (async () => {
   try {
     const token = await AsyncStorage.getItem('token')
-    
+
     if (token && token !== 'undefined' && token !== '') {
       const user = JSON.parse(await AsyncStorage.getItem('user'))
       if (user) {
@@ -34,7 +34,8 @@ export default class App extends React.Component {
     return (
       <Provider store={store} key="provider">
         <Routes />
-      </Provider>
+      </Provider> //when you wrap app in provider parent component everything below it can use connect call
+                  // to connect to redux
     )
   }
 }
