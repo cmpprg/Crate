@@ -3,6 +3,7 @@ import Login from '../../modules/user/Login'
 import Signup from '../../modules/user/Signup'
 import Profile from '../../modules/user/Profile'
 import Subscriptions from '../../modules/user/Subscriptions'
+import StyleSurvey from '../../modules/user/styleSurvey'
 
 // User routes
 export default {
@@ -23,10 +24,15 @@ export default {
   },
 
 //we will need to check if user has a style survey if yes then we will route them to Subscriptions
-//if no then we will route them to new path where style survey will live 
+//if no then we will route them to new path where style survey will live
+  // subscriptions: {
+  //   path: '/user/subscriptions',
+  //   component: Subscriptions,
+  //   auth: true
+  // }
   subscriptions: {
-    path: '/user/subscriptions',
-    component: Subscriptions,
+    path: '/user/styleSurvey',
+    component: StyleSurvey,
     auth: true
   }
 }
