@@ -17,6 +17,7 @@ import { logout } from './api/actions'
 
 // Component
 const Profile = (props) => (
+
   <div>
     {/* SEO */}
     <Helmet>
@@ -46,6 +47,8 @@ const Profile = (props) => (
   </div>
 )
 
+
+
 // Component Properties
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
@@ -58,5 +61,6 @@ function profileState(state) {
     user: state.user
   }
 }
+
 
 export default connect(profileState, { logout })(Profile)
