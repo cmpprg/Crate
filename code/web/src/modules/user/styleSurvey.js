@@ -23,8 +23,6 @@ class StyleSurvey extends Component {
       dresses: '',
       shoes: '',
       accessories: ''
-
-
     }
   }
 
