@@ -1,18 +1,26 @@
 import express from 'express';
-import schema from '../../../setup/schema';
 import graphqlHTTP from 'express-graphql';
 import request from 'supertest';
+
+import schema from '../../../setup/schema';
+import db from '../../../setup/database';
+import models from '../../../setup/models'
 
 describe ("user mutations", () => {
 
   let server = express();
 
-  beforeAll(() => {
+  beforeAll(async() => {
     server.use('/', graphqlHTTP({
       schema,
       graphiql: false
     }));
   });
+
+  afterAll(async() => {
+    await models.User.destroy({ where: {}});
+    db.close();
+  })
 
   it("can signup a user", async() => {
     const response = await request(server)
