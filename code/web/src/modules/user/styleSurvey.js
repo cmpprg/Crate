@@ -19,7 +19,6 @@ class StyleSurvey extends Component {
 //potentially simplify categories to array of strings for backend??
 //potentially add style to state
     this.state = {
-      categories: ['tops', 'bottoms', 'dresses', 'shoes', 'accessories'],
       tops: '',
       bottoms: '',
       dresses: '',
@@ -34,9 +33,9 @@ class StyleSurvey extends Component {
 
   render() {
 
-    const categoryCards = this.state.categories.map(category => (
+    const categoryCards = Object.keys(this.state).map((category, index) => (
       <div style={{ margin: '5em', float: 'left' }}>
-        <CategoryCards category={category}/>
+        <CategoryCards index={index} category={category}/>
       </div>
     ))
 

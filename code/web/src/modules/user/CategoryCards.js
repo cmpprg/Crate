@@ -28,17 +28,36 @@ class CategoryCards extends PureComponent {
     }
   }
 
-  render() {
-    console.log('cat', this.props);
+  render() {    
+    console.log('woo', this.props);
     
-    const { category } = this.props;
-    const style = this.state.styles.map(style => (
-        <Card style={{ width: '27em', margin: '1em', height: '25em' }}>
-          <p>
-            {style}
-          </p>
-        </Card>
-    ))
+    const { index, category } = this.props;
+
+    const style = this.state.styles.map(style => {
+      let cardImg = '';
+      if(style === 'preppy') {
+        cardImg = `${ APP_URL }/images/survey/Preppy${index}.png`
+        return(
+          <div style={{ backgroundImage: `url(${cardImg})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '27em', margin: '1em', height: '25em' }}>
+            <Button theme="primary" >Select</Button>
+          </div>
+          )
+      } else if (style === 'edgy') {
+        cardImg = `${ APP_URL }/images/survey/Edgy${index}.png`
+        return(
+          <div style={{ backgroundImage: `url(${cardImg})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '27em', margin: '1em', height: '25em' }}>
+            <Button theme="primary" >Select</Button>
+          </div>
+          )
+      } else if (style === 'sporty') {
+        cardImg = `${ APP_URL }/images/survey/Sporty${index}.png`
+        return(
+          <div style={{ backgroundImage: `url(${cardImg})`, backgroundSize: 'cover', backgroundPosition: 'center center', width: '27em', margin: '1em', height: '25em' }}>
+            <Button theme="primary" >Select</Button>
+          </div>
+          )
+      }
+    })
 
     return (
       <Card style={{ width: '75em', backgroundColor: white }}>

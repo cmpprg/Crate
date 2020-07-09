@@ -29,13 +29,14 @@ class Item extends PureComponent {
       isLoading: false
     }
   }
-
+  
   onClickSubscribe = (crateId) => {
     this.setState({
       isLoading: true
     })
 
-    this.props.messageShow('Subscribing, please wait...')
+     // move to when form has been submitted 
+    // this.props.messageShow('Subscribing, please wait...')
 
     this.props.create({ crateId })
       .then(response => {
