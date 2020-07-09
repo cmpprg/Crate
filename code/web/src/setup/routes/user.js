@@ -25,12 +25,13 @@ export default {
 
 //we will need to check if user has a style survey if yes then we will route them to Subscriptions
 //if no then we will route them to new path where style survey will live
-  // subscriptions: {
-  //   path: '/user/subscriptions',
-  //   component: Subscriptions,
-  //   auth: true
-  // }
   subscriptions: {
+    path: '/user/subscriptions',
+    component: Subscriptions,
+    auth: true
+  },
+  
+  survey: {
     path: '/user/styleSurvey',
     component: StyleSurvey,
     auth: true

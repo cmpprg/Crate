@@ -7,6 +7,7 @@ import Button from '../../ui/button'
 import { grey, grey2 } from '../../ui/common/colors'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
+import CategoryCards from './CategoryCards';
 
 
 class StyleSurvey extends Component {
@@ -18,13 +19,12 @@ class StyleSurvey extends Component {
 //potentially simplify categories to array of strings for backend??
 //potentially add style to state
     this.state = {
+      categories: ['tops', 'bottoms', 'dresses', 'shoes', 'accessories'],
       tops: '',
       bottoms: '',
       dresses: '',
       shoes: '',
       accessories: ''
-
-
     }
   }
 
@@ -32,9 +32,14 @@ class StyleSurvey extends Component {
     console.log(this.props)
   }
 
-
-
   render() {
+
+    const categoryCards = this.state.categories.map(category => (
+      <div style={{ margin: '5em', float: 'left' }}>
+        <CategoryCards category={category}/>
+      </div>
+    ))
+
     return (
       <div>
       {/* SEO */}
@@ -45,26 +50,16 @@ class StyleSurvey extends Component {
       <Grid style={{ backgroundColor: grey }}>
         <GridCell style={{ padding: '2em', textAlign: 'center' }}>
           <H3 font="secondary">Style Survey</H3>
+
+          <p style={{ marginTop: '1em', color: grey2 }}>Scroll through each category and select one option which defines your personal style.</p>
         </GridCell>
       </Grid>
 
       <Grid>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Tops</H4>
-        </GridCell>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Bottoms</H4>
-        </GridCell>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Dresses</H4>
-        </GridCell>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Shoes</H4>
-        </GridCell>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Accessories</H4>
-        </GridCell>
-      </Grid>
+          <GridCell>
+            { categoryCards }
+          </GridCell>
+        </Grid>
 
       </div>
     )
