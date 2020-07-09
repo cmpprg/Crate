@@ -7,10 +7,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     },
     style: {
-      type: DataTypes.string
+      type: DataTypes.STRING
     }
   })
-}
 
 Survey.associate = function(models) {
   Survey.belongsTo(models.User)
