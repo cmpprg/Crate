@@ -8,7 +8,6 @@ import { level1 } from '../common/shadows'
 const Card = (props) => {
 
   const { children, ...other } = props
-  console.log('whaaat?', props)
 
   return (
     <div {...other}>

@@ -5,11 +5,10 @@ import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 
 // UI Imports
-import Form from '../../ui/form/Form'
 import Button from '../../ui/button/Button'
-import H4 from '../../ui/typography/H4'
-import Icon from '../../ui/icon'
+import H2 from '../../ui/typography/H2'
 import { white, grey2, black } from '../../ui/common/colors'
+import Card from '../../ui/card/Card'
 
 // App Imports
 import { APP_URL } from '../../setup/config/env'
@@ -24,31 +23,33 @@ class CategoryCards extends PureComponent {
     super(props)
 
     this.state = {
-      isLoading: false
+      isLoading: false,
+      styles: ['preppy', 'edgy', 'sporty'],
     }
   }
 
   render() {
-    const { category } = this.props
+    console.log('cat', this.props);
+    
+    const { category } = this.props;
+    const style = this.state.styles.map(style => (
+        <Card style={{ width: '27em', margin: '1em', height: '25em' }}>
+          <p>
+            {style}
+          </p>
+        </Card>
+    ))
 
     return (
-      <Form style={{ width: '75em', backgroundColor: white }}>
-        <p style={{ padding: '2em 3em 0 3em' }}>
-          {/* <img src={`${ APP_URL }/images/crate.png`} alt={'text'} style={{ width: '100%' }}/> */}
-        </p>
-
+      <Card style={{ width: '75em', backgroundColor: white }}>
         <div style={{ padding: '1em 1.2em' }}>
-          <H4 font="secondary" style={{ color: black }}>{category}</H4>
+          <H2 font="secondary" style={{ color: black }}>{category}</H2>
 
-          <p style={{ color: grey2, marginTop: '1em' }}>Heeey</p>
-
-          <p style={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '1em' }}>
-            <Button>
-              <Icon size={1.2} style={{ color: white }}>add</Icon> Subscribe
-            </Button>
-          </p>
+          <div style={{ display: 'flex', justifyContent: 'space-around', padding: '1em 1.2em' }}>
+            {style}
+          </div>
         </div>
-      </Form>
+      </Card>
     )
   }
 }

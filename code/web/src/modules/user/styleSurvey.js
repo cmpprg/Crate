@@ -50,6 +50,8 @@ class StyleSurvey extends Component {
       <Grid style={{ backgroundColor: grey }}>
         <GridCell style={{ padding: '2em', textAlign: 'center' }}>
           <H3 font="secondary">Style Survey</H3>
+
+          <p style={{ marginTop: '1em', color: grey2 }}>Scroll through each category and select one option which defines your personal style.</p>
         </GridCell>
       </Grid>
 
@@ -58,24 +60,6 @@ class StyleSurvey extends Component {
             { categoryCards }
           </GridCell>
         </Grid>
-
-      {/* <Grid>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Tops</H4>
-        </GridCell>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Bottoms</H4>
-        </GridCell>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Dresses</H4>
-        </GridCell>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Shoes</H4>
-        </GridCell>
-        <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-          <H4 style={{ marginBottom: '0.5em' }}>Accessories</H4>
-        </GridCell>
-      </Grid> */}
 
       </div>
     )
