@@ -1,6 +1,9 @@
 // Imports
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
+// App Imports
+import { SurveyType } from '../survey/types'
+
 // User type
 const UserType = new GraphQLObjectType({
   name: 'user',
@@ -12,6 +15,7 @@ const UserType = new GraphQLObjectType({
     email: { type: GraphQLString },
     password: { type: GraphQLString },
     role: { type: GraphQLString },
+    survey: {type: SurveyType},
     createdAt: { type: GraphQLString },
     updatedAt: { type: GraphQLString }
   })
