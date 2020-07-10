@@ -5,7 +5,6 @@ import bcrypt from 'bcrypt';
 
 import schema from '../../../setup/schema';
 import models from '../../../setup/models';
-import db from '../../../setup/database';
 
 describe ("user queries", () => {
 
