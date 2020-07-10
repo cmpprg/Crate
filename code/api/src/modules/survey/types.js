@@ -2,7 +2,8 @@
 import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 
 // App Imports
-import { UserType } from '../user/types'
+// import { UserType } from '../user/types'
+const UType = require('../user/types').UserType;
 
 // Survey type
 const SurveyType = new GraphQLObjectType({
@@ -11,11 +12,11 @@ const SurveyType = new GraphQLObjectType({
 
   fields: () => ({
     id: { type: GraphQLInt },
-    user: { type: UserType },
+    user: { type: UType },
     style: { type: GraphQLString },
     createdAt: { type: GraphQLString },
     updatedAt: { type: GraphQLString }
   })
 })
 
-export default SurveyType
+export { SurveyType }

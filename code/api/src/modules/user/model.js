@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
 
   User.associate = function(models) {
     User.hasMany(models.Subscription)
-    User.hasOne(models.Survey)
+    // User.hasOne(models.Survey)
   }
 
   return User

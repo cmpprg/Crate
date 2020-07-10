@@ -2,7 +2,7 @@
 import { GraphQLInt, GraphQLList } from 'graphql'
 
 // App Imports
-import SurveyType from './types'
+import { SurveyType } from './types'
 import { getByUser } from './resolvers'
 
 // Survey by user

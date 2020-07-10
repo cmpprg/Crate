@@ -2,15 +2,16 @@
 import { GraphQLString, GraphQLInt } from 'graphql'
 
 // App Imports
-import { SurveyType } from './types'
+// import { SurveyType } from './types'
+const SType = require('./types').SurveyType;
 import { create } from './resolvers'
 
 // Create
 export const addSurvey = {
-  type: SurveyType,
+  type: SType,
   args: {
     userId: {
-      name: 'name',
+      name: 'userId',
       type: GraphQLInt
     },
 
