@@ -40,12 +40,6 @@ class StyleSurvey extends Component {
           key={index}
           index={index}
           category={cat} 
-          // style={{ 
-
-          //   display: 'flex',
-          //   flexDirection: 'column',
-          //   alignItems: 'center', 
-          // }}
         />
       )
     })

@@ -42,13 +42,19 @@ class CategoryCards extends PureComponent {
               backgroundPosition: 'center', 
               width: '27em', 
               margin: '1em', 
-              height: '25em',
+              height: '27em',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
             }}
           >
-            <Button id={} style={{ height: '2.7em' }} theme="primary">Select</Button>
+            <Button 
+              id={style} 
+              style={{ height: '2.7em' }} 
+              theme="primary"
+            >
+              Select
+            </Button>
           </div>
         )
       })
