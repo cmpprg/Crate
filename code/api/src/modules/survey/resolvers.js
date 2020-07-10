@@ -3,8 +3,8 @@ import models from '../../setup/models'
 
 // Create survey
 export async function create(parentValue, { userId, style }) {
-  const user = await models.User.findOne({ where: { id: userId }})
-  if (!user.survey) {
+  const survey = await models.Survey.findOne({ where: { userId: userId }})
+  if (!survey) {
     return await models.Survey.create({
       userId,
       style
