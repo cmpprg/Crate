@@ -44,5 +44,9 @@ export async function create(parentValue, {  userId, tops, bottoms, dresses, sho
 
 // get survey by user id
 export async function getByUser(parentValue, { userId }){
-  return await models.Survey.findOne({where: { userId: userId }})
+  return await models.Survey.findOne({where: { userId: userId },
+    include: [
+    { model: models.User, as: 'user' }
+    ]
+  })
 }
