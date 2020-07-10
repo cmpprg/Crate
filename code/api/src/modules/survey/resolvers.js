@@ -14,7 +14,7 @@ export async function create(parentValue, { userId, style }) {
   }
 }
 
-export async function getById(parentValue, { userId }) {
+export async function getByUser(parentValue, { userId }) {
   const survey = await models.Survey.findOne({ where: { userId: userId } })
 
   if (!survey) {
