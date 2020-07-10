@@ -1,14 +1,14 @@
 // Imports
-import { GraphQLObjectType } from 'graphql'
+import { GraphQLObjectType, GraphQLInt, GraphQLString } from 'graphql'
 
 // App Imports
-import { userType } from '../user/types'
+import { UserType } from '../user/types'
 
 const SurveyType = new GraphQLObjectType({
   name: 'survey',
   description: 'Survey Type',
 
-  fields: () => {
+  fields: () => ({
     id: { type: GraphQLInt },
     user: { type: UserType },
     style: { type: GraphQLString },
@@ -19,5 +19,7 @@ const SurveyType = new GraphQLObjectType({
     accessories: { type: GraphQLString },
     createdAt: { type: GraphQLString },
     updatedAt: { type: GraphQLString }
-  }
+  })
 })
+
+export default SurveyType
