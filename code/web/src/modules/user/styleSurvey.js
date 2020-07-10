@@ -7,7 +7,8 @@ import Button from '../../ui/button'
 import { grey, grey2 } from '../../ui/common/colors'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
-import CategoryCards from './CategoryCards';
+import CategoryCards from './CategoryCards'
+import { APP_URL } from '../../setup/config/env'
 
 
 class StyleSurvey extends Component {
@@ -23,7 +24,7 @@ class StyleSurvey extends Component {
       bottoms: '',
       dresses: '',
       shoes: '',
-      accessories: ''
+      accessories: '',
     }
   }
 
@@ -33,11 +34,21 @@ class StyleSurvey extends Component {
 
   render() {
 
-    const categoryCards = Object.keys(this.state).map((category, index) => (
-      <div style={{ margin: '5em', float: 'left' }}>
-        <CategoryCards index={index} category={category}/>
-      </div>
-    ))
+    const categoryCards = Object.keys(this.state).map((cat, index) => {
+      return (
+        <CategoryCards
+          key={index}
+          index={index}
+          category={cat} 
+          // style={{ 
+
+          //   display: 'flex',
+          //   flexDirection: 'column',
+          //   alignItems: 'center', 
+          // }}
+        />
+      )
+    })
 
     return (
       <div>
@@ -55,7 +66,13 @@ class StyleSurvey extends Component {
       </Grid>
 
       <Grid>
-          <GridCell>
+          <GridCell 
+            style={{ 
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center', 
+              }}
+          >
             { categoryCards }
           </GridCell>
         </Grid>

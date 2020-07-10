@@ -24,48 +24,47 @@ class CategoryCards extends PureComponent {
 
     this.state = {
       isLoading: false,
-      styles: ['preppy', 'edgy', 'sporty'],
+      styles: ['preppy', 'edgy', 'sporty']
     }
   }
 
   render() {    
-    console.log('woo', this.props);
-    
+    const styles = this.state.styles
     const { index, category } = this.props;
 
-    const style = this.state.styles.map(style => {
-      let cardImg = '';
-      if(style === 'preppy') {
-        cardImg = `${ APP_URL }/images/survey/Preppy${index}.png`
-        return(
-          <div style={{ backgroundImage: `url(${cardImg})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '27em', margin: '1em', height: '25em' }}>
-            <Button theme="primary" >Select</Button>
+    const styleCard = styles.map(style => {  
+        let cardImg = `${ APP_URL }/images/survey/${style}${index}.png`;          
+        return (
+          <div  
+            style={{ 
+              backgroundImage: `url(${cardImg})`, 
+              backgroundSize: 'cover', 
+              backgroundPosition: 'center', 
+              width: '27em', 
+              margin: '1em', 
+              height: '25em',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Button id={} style={{ height: '2.7em' }} theme="primary">Select</Button>
           </div>
-          )
-      } else if (style === 'edgy') {
-        cardImg = `${ APP_URL }/images/survey/Edgy${index}.png`
-        return(
-          <div style={{ backgroundImage: `url(${cardImg})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '27em', margin: '1em', height: '25em' }}>
-            <Button theme="primary" >Select</Button>
-          </div>
-          )
-      } else if (style === 'sporty') {
-        cardImg = `${ APP_URL }/images/survey/Sporty${index}.png`
-        return(
-          <div style={{ backgroundImage: `url(${cardImg})`, backgroundSize: 'cover', backgroundPosition: 'center center', width: '27em', margin: '1em', height: '25em' }}>
-            <Button theme="primary" >Select</Button>
-          </div>
-          )
-      }
-    })
+        )
+      })
 
     return (
-      <Card style={{ width: '75em', backgroundColor: white }}>
-        <div style={{ padding: '1em 1.2em' }}>
-          <H2 font="secondary" style={{ color: black }}>{category}</H2>
-
-          <div style={{ display: 'flex', justifyContent: 'space-around', padding: '1em 1.2em' }}>
-            {style}
+      <Card 
+        style={{ 
+          width: '75em', 
+          marginTop: '5em', 
+          boxShadow: '0px 4px 40px rgba(0, 0, 0, 0.10)' 
+          }}
+      >
+        <div style={{ width: '75em' }}>
+          <H2 font="secondary" style={{ color: 'black', paddingTop: '.5em', textAlign: 'center', }}>{category}</H2>
+          <div style={{ display: 'flex', justifyContent: 'space-around', padding: '.5em 1.2em' }}>
+            {styleCard}
           </div>
         </div>
       </Card>
