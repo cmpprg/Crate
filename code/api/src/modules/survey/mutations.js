@@ -13,10 +13,6 @@ export const surveyCreate = {
       name: 'userId',
       type: GraphQLInt
     },
-    style: {
-      name: 'style',
-      type: GraphQLString
-    },
     tops: {
       name: 'tops',
       type: GraphQLString
