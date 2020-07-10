@@ -9,6 +9,9 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.TEXT
     },
+    surveyId: {
+      type: DataTypes.INTEGER
+    },
     password: {
       type: DataTypes.TEXT
     },
@@ -19,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
 
   User.associate = function(models) {
     User.hasMany(models.Subscription)
+    User.hasOne(models.Survey)
   }
 
   return User

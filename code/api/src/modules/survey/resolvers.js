@@ -13,3 +13,14 @@ export async function create(parentValue, { userId, style }) {
     throw new Error('This user already has a style survey.')
   }
 }
+
+export async function getById(parentValue, { userId }) {
+  const survey = await models.Survey.findOne({ where: { userId: userId } })
+
+  if (!survey) {
+    // user survey does not exist
+    throw new Error('There is no style survey for this user')
+  } else {
+    return survey
+  }
+}

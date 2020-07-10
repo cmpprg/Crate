@@ -7,7 +7,7 @@ import { UserType } from '../user/types'
 // Survey type
 const SurveyType = new GraphQLObjectType({
   name: 'survey',
-  description: 'Survey type',
+  description: 'Survey Type',
 
   fields: () => ({
     id: { type: GraphQLInt },

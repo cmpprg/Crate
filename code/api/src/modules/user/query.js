@@ -42,6 +42,12 @@ export const userLogin = {
   resolve: login
 }
 
+// //has style survey
+// export const userStyle = {
+//   type: UserSurveyType,
+//   args
+// }
+
 // Genders
 export const userGenders = {
   type: new GraphQLList(UserGenderType),
