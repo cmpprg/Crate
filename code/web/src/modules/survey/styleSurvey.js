@@ -10,6 +10,8 @@ import { Link, withRouter } from 'react-router-dom'
 import CategoryCards from './CategoryCards'
 import { APP_URL } from '../../setup/config/env'
 
+import { determineStyle } from './api/actions'
+
 
 class StyleSurvey extends Component {
 
@@ -20,11 +22,12 @@ class StyleSurvey extends Component {
 //potentially simplify categories to array of strings for backend??
 //potentially add style to state
     this.state = {
-      tops: '',
-      bottoms: '',
-      dresses: '',
-      shoes: '',
-      accessories: '',
+      categories: ['tops', 'bottoms', 'dresses', 'shoes', 'accessories']
+      // tops: '',
+      // bottoms: '',
+      // dresses: '',
+      // shoes: '',
+      // accessories: '',
     }
   }
 
@@ -34,12 +37,12 @@ class StyleSurvey extends Component {
 
   render() {
 
-    const categoryCards = Object.keys(this.state).map((cat, index) => {
+    const categoryCards = this.state.categories.map((cat, index) => {
       return (
         <CategoryCards
           key={index}
           index={index}
-          category={cat} 
+          category={cat}
         />
       )
     })
@@ -60,18 +63,18 @@ class StyleSurvey extends Component {
       </Grid>
 
       <Grid>
-          <GridCell 
-            style={{ 
+          <GridCell
+            style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               }}
           >
             { categoryCards }
-            <Button 
+            <Button
               theme="primary"
               style={{
-                margin: '2em 0', 
+                margin: '2em 0',
               }}
             >
               Submit
@@ -84,6 +87,15 @@ class StyleSurvey extends Component {
   }
 
 }
+
+
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     // addStyle: (category, style) => dispatch(addStyle(category, style)),
+//     determineStyle: () => dispatch(determineStyle())
+//   }
+// }
 
 // const mapStateToProps = (state) => {
 //   // you should return a specific chunk of state, not just the entirety of the redux state object
