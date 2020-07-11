@@ -68,8 +68,24 @@ class CategoryCards extends PureComponent {
           }}
       >
         <div style={{ width: '75em' }}>
-          <H2 font="secondary" style={{ color: 'black', paddingTop: '.5em', textAlign: 'center', }}>{category}</H2>
-          <div style={{ display: 'flex', justifyContent: 'space-around', padding: '.5em 1.2em' }}>
+          <H2 
+            font="secondary" 
+            style={{ 
+              color: 'black', 
+              paddingTop: '.5em', 
+              textAlign: 'center', 
+              textTransform: 'capitalize',
+              }}
+            >
+              {category}
+            </H2>
+          <div 
+            style={{ 
+              display: 'flex', 
+              justifyContent: 'space-around', 
+              padding: '.5em 1.2em' 
+            }}
+          >
             {styleCard}
           </div>
         </div>

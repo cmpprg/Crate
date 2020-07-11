@@ -64,10 +64,18 @@ class StyleSurvey extends Component {
             style={{ 
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center', 
+              alignItems: 'center',
               }}
           >
             { categoryCards }
+            <Button 
+              theme="primary"
+              style={{
+                margin: '2em 0', 
+              }}
+            >
+              Submit
+            </Button>
           </GridCell>
         </Grid>
 
