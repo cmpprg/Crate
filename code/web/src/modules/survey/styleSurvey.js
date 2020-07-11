@@ -24,6 +24,8 @@ class StyleSurvey extends Component {
   sendSurveyData = () => { 
     const surveyData = this.props.styles  
     this.props.determineStyle(surveyData)
+    console.log('hey', this.props.survey);
+    
     window.alert(this.props.styles.userStyle)
   }
 
@@ -99,6 +101,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     styles: state.styles,
+    survey: state.survey,
     user: state.user
   }
 }
