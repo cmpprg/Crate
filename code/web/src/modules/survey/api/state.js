@@ -3,6 +3,7 @@
 // App Imports
 import {
    ADD_STYLE,
+   SET_STYLE,
 } from './actions'
 
 // Style Survey
@@ -14,8 +15,7 @@ tops: '',
 bottoms: '',
 dresses: '',
 shoes: '',
-accessories: ''
-// isCompleted: false,
+accessories: '',
 }
 
 // State

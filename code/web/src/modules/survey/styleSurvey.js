@@ -8,31 +8,29 @@ import { grey, grey2 } from '../../ui/common/colors'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 import CategoryCards from './CategoryCards'
-import { APP_URL } from '../../setup/config/env'
-
 import { determineStyle } from './api/actions'
+import { addStyle } from './api/actions'
 
 
 class StyleSurvey extends Component {
 
   constructor(props) {
     super(props)
-
-
-//potentially simplify categories to array of strings for backend??
-//potentially add style to state
     this.state = {
       categories: ['tops', 'bottoms', 'dresses', 'shoes', 'accessories']
-      // tops: '',
-      // bottoms: '',
-      // dresses: '',
-      // shoes: '',
-      // accessories: '',
     }
   }
 
+  sendSurveyData = () => {
+    console.log('style', this.props.styles);
+    
+    // this.props.determineStyle(this.props.styles)
+  }
+
   componentDidMount() {
-    console.log(this.props)
+    const userID = this.props.user.details.id
+    const keyString = 'userId'
+    this.props.addStyle(keyString, userID)
   }
 
   render() {
@@ -76,6 +74,7 @@ class StyleSurvey extends Component {
               style={{
                 margin: '2em 0',
               }}
+              onClick={this.sendSurveyData.bind(this)}
             >
               Submit
             </Button>
@@ -90,16 +89,19 @@ class StyleSurvey extends Component {
 
 
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     // addStyle: (category, style) => dispatch(addStyle(category, style)),
-//     determineStyle: () => dispatch(determineStyle())
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    determineStyle: (surveyData) => dispatch(determineStyle()),
+    addStyle: (key, userID) => dispatch(addStyle(key, userID)),
+  }
+}
 
-// const mapStateToProps = (state) => {
-//   // you should return a specific chunk of state, not just the entirety of the redux state object
-//   return state;
-// }
+const mapStateToProps = (state) => {
+  // you should return a specific chunk of state, not just the entirety of the redux state object
+  return {
+    styles: state.styles,
+    user: state.user
+  }
+}
 
-export default StyleSurvey;
+export default connect(mapStateToProps, mapDispatchToProps)(StyleSurvey);
