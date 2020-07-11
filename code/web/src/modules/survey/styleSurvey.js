@@ -85,4 +85,4 @@ class StyleSurvey extends Component {
 
 }
 
-export default StyleSurvey
+export default StyleSurvey;

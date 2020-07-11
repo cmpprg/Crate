@@ -9,6 +9,7 @@ import user from '../modules/user/api/state'
 import * as product from '../modules/product/api/state'
 import * as subscription from '../modules/subscription/api/state'
 import * as crate from '../modules/crate/api/state'
+import * as survey from '../modules/survey/api/state' 
 
 // App Reducer
 const appReducer = combineReducers({
@@ -16,7 +17,8 @@ const appReducer = combineReducers({
   user,
   ...product,
   ...subscription,
-  ...crate
+  ...crate,
+  ...survey
 })
 
 // Root Reducer
@@ -35,12 +37,14 @@ if (typeof window !== 'undefined') {
   delete window.__INITIAL_STATE__
 }
 
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
 // Store
 export const store = createStore(
   rootReducer,
   initialState,
-
-  compose(
+  
+  composeEnhancers(
     applyMiddleware(thunk),
   )
 )
