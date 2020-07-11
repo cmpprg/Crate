@@ -21,7 +21,6 @@ const calculateStyle = styleAnswers => {
 
 // Create a survey without auth
 export async function create(parentValue, {  userId, tops, bottoms, dresses, shoes, accessories }){
-  console.log()
   const user = await models.User.findOne({ where: { id: userId } });
   if (!user) {
     throw new Error("user does not exist in database")
