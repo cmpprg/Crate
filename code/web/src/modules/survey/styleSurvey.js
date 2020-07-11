@@ -7,7 +7,8 @@ import Button from '../../ui/button'
 import { grey, grey2 } from '../../ui/common/colors'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
-import CategoryCards from './CategoryCards';
+import CategoryCards from './CategoryCards'
+import { APP_URL } from '../../setup/config/env'
 
 
 class StyleSurvey extends Component {
@@ -19,12 +20,11 @@ class StyleSurvey extends Component {
 //potentially simplify categories to array of strings for backend??
 //potentially add style to state
     this.state = {
-      categories: ['tops', 'bottoms', 'dresses', 'shoes', 'accessories'],
       tops: '',
       bottoms: '',
       dresses: '',
       shoes: '',
-      accessories: ''
+      accessories: '',
     }
   }
 
@@ -34,11 +34,15 @@ class StyleSurvey extends Component {
 
   render() {
 
-    const categoryCards = this.state.categories.map(category => (
-      <div style={{ margin: '5em', float: 'left' }}>
-        <CategoryCards category={category}/>
-      </div>
-    ))
+    const categoryCards = Object.keys(this.state).map((cat, index) => {
+      return (
+        <CategoryCards
+          key={index}
+          index={index}
+          category={cat} 
+        />
+      )
+    })
 
     return (
       <div>
@@ -56,8 +60,22 @@ class StyleSurvey extends Component {
       </Grid>
 
       <Grid>
-          <GridCell>
+          <GridCell 
+            style={{ 
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              }}
+          >
             { categoryCards }
+            <Button 
+              theme="primary"
+              style={{
+                margin: '2em 0', 
+              }}
+            >
+              Submit
+            </Button>
           </GridCell>
         </Grid>
 
