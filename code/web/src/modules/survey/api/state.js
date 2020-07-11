@@ -10,23 +10,34 @@ import {
 
 // Initial State
 export const surveyInitialState = {
-userId: null,
-tops: '',
-bottoms: '',
-dresses: '',
-shoes: '',
-accessories: '',
+    userId: null,
+    tops: '',
+    bottoms: '',
+    dresses: '',
+    shoes: '',
+    accessories: '',
+}
+
+export const userStyle = {
+    userStyle: null
 }
 
 // State
 export function styles(state = surveyInitialState, action) {
-switch (action.type) {
-    case 'ADD_STYLE':
-    return {
-        ...state,
-        [action.category]: action.style
-    };
-    default:
-    return state;
-}
+    console.log('action', action);
+    
+    switch (action.type) {
+        case 'ADD_STYLE':
+        return {
+            ...state,
+            [action.category]: action.style
+        }
+
+        case 'SET_STYLE':
+        return {
+            userStyle: action.style
+        }
+        default:
+        return state;
+    }
 }

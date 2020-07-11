@@ -21,10 +21,10 @@ class StyleSurvey extends Component {
     }
   }
 
-  sendSurveyData = () => {
-    console.log('style', this.props.styles);
-    
-    // this.props.determineStyle(this.props.styles)
+  sendSurveyData = () => { 
+    const surveyData = this.props.styles  
+    this.props.determineStyle(surveyData)
+    window.alert(this.props.styles.userStyle)
   }
 
   componentDidMount() {
@@ -91,13 +91,12 @@ class StyleSurvey extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    determineStyle: (surveyData) => dispatch(determineStyle()),
+    determineStyle: (surveyData) => dispatch(determineStyle(surveyData)),
     addStyle: (key, userID) => dispatch(addStyle(key, userID)),
   }
 }
 
 const mapStateToProps = (state) => {
-  // you should return a specific chunk of state, not just the entirety of the redux state object
   return {
     styles: state.styles,
     user: state.user
