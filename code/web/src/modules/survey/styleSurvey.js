@@ -85,4 +85,9 @@ class StyleSurvey extends Component {
 
 }
 
-export default StyleSurvey
+// const mapStateToProps = (state) => {
+//   // you should return a specific chunk of state, not just the entirety of the redux state object
+//   return state;
+// }
+
+export default StyleSurvey;

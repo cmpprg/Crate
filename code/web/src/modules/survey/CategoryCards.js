@@ -7,14 +7,13 @@ import { Link, withRouter } from 'react-router-dom'
 // UI Imports
 import Button from '../../ui/button/Button'
 import H2 from '../../ui/typography/H2'
-import { white, grey2, black } from '../../ui/common/colors'
 import Card from '../../ui/card/Card'
 
 // App Imports
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
 import { messageShow, messageHide } from '../common/api/actions'
-import { create } from '../subscription/api/actions'
+import { addStyle } from './api/actions'
 
 // Component
 class CategoryCards extends PureComponent {
@@ -52,6 +51,7 @@ class CategoryCards extends PureComponent {
               id={style} 
               style={{ height: '2.7em' }} 
               theme="primary"
+              onClick={() => {this.props.addStyle(category, style)}}
             >
               Select
             </Button>
@@ -103,10 +103,16 @@ class CategoryCards extends PureComponent {
 // }
 
 // Component State
-// function itemState(state) {
-//   return {
-//     user: state.user
-//   }
-// }
+const mapStateToProps = (state) => {
+  // you should return a specific chunk of state, not just the entirety of the redux state object
+  return state;
+}
 
-export default CategoryCards
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addStyle: (category, style) => dispatch(addStyle(category, style))
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryCards);
