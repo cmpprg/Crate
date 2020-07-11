@@ -15,6 +15,8 @@ import userRoutes from '../../setup/routes/user'
 import { messageShow, messageHide } from '../common/api/actions'
 import { addStyle } from './api/actions'
 
+
+
 // Component
 class CategoryCards extends PureComponent {
 
@@ -27,29 +29,29 @@ class CategoryCards extends PureComponent {
     }
   }
 
-  render() {    
+  render() {
     const styles = this.state.styles
     const { index, category } = this.props;
 
-    const styleCard = styles.map(style => {  
-        let cardImg = `${ APP_URL }/images/survey/${style}${index}.png`;          
+    const styleCard = styles.map(style => {
+        let cardImg = `${ APP_URL }/images/survey/${style}${index}.png`;
         return (
-          <div  
-            style={{ 
-              backgroundImage: `url(${cardImg})`, 
-              backgroundSize: 'cover', 
-              backgroundPosition: 'center', 
-              width: '27em', 
-              margin: '1em', 
+          <div
+            style={{
+              backgroundImage: `url(${cardImg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              width: '27em',
+              margin: '1em',
               height: '27em',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
             }}
           >
-            <Button 
-              id={style} 
-              style={{ height: '2.7em' }} 
+            <Button
+              id={style}
+              style={{ height: '2.7em' }}
               theme="primary"
               onClick={() => {this.props.addStyle(category, style)}}
             >
@@ -60,30 +62,30 @@ class CategoryCards extends PureComponent {
       })
 
     return (
-      <Card 
-        style={{ 
-          width: '75em', 
-          marginTop: '5em', 
-          boxShadow: '0px 4px 40px rgba(0, 0, 0, 0.10)' 
+      <Card
+        style={{
+          width: '75em',
+          marginTop: '5em',
+          boxShadow: '0px 4px 40px rgba(0, 0, 0, 0.10)'
           }}
       >
         <div style={{ width: '75em' }}>
-          <H2 
-            font="secondary" 
-            style={{ 
-              color: 'black', 
-              paddingTop: '.5em', 
-              textAlign: 'center', 
+          <H2
+            font="secondary"
+            style={{
+              color: 'black',
+              paddingTop: '.5em',
+              textAlign: 'center',
               textTransform: 'capitalize',
               }}
             >
               {category}
             </H2>
-          <div 
-            style={{ 
-              display: 'flex', 
-              justifyContent: 'space-around', 
-              padding: '.5em 1.2em' 
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              padding: '.5em 1.2em'
             }}
           >
             {styleCard}
@@ -110,7 +112,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addStyle: (category, style) => dispatch(addStyle(category, style))
+    addStyle: (category, style) => dispatch(addStyle(category, style)),
+
   }
 }
 
