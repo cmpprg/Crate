@@ -3,7 +3,12 @@ import models from '../../setup/models'
 
 //helpers
 const calculateStyle = styleAnswers => {
-  let styles = { 'sporty': 0, 'formal': 0, 'edgy': 0 };
+  const results = {
+    'sporty':'Your style is adventurous and sporty',
+    'preppy': 'Your style is refined and chic',
+    'edgy': 'Your style is fresh and edgy'
+  };
+  let styles = { 'sporty': 0, 'preppy': 0, 'edgy': 0 };
   let greatestCount = 0
   let greatestOccurence = null;
 
@@ -15,8 +20,8 @@ const calculateStyle = styleAnswers => {
       greatestOccurence = answer
     }
   }
-
-  return greatestOccurence
+  
+  return results[greatestOccurence]
 };
 
 // Create a survey without auth
