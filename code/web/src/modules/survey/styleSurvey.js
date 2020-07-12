@@ -21,12 +21,10 @@ class StyleSurvey extends Component {
     }
   }
 
-  sendSurveyData = () => { 
+  sendSurveyData = async () => { 
     const surveyData = this.props.styles  
-    this.props.determineStyle(surveyData)
-    console.log('hey', this.props.survey);
-    
-    window.alert(this.props.styles.userStyle)
+    await this.props.determineStyle(surveyData)
+    window.alert(Object.values(this.props.survey))
   }
 
   componentDidMount() {

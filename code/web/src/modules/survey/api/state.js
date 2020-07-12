@@ -37,7 +37,7 @@ export function styles(state = surveyInitialState, action) {
     }
 }
 
-export function survey(state = surveyInitialState, action) {
+export function survey(state = userStyle, action) {
     
     switch (action.type) {
         case 'SET_STYLE':
