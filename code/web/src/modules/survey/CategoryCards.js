@@ -2,7 +2,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Link, withRouter } from 'react-router-dom'
 
 // UI Imports
 import Button from '../../ui/button/Button'
@@ -11,7 +10,6 @@ import Card from '../../ui/card/Card'
 
 // App Imports
 import { APP_URL } from '../../setup/config/env'
-import userRoutes from '../../setup/routes/user'
 import { messageShow, messageHide } from '../common/api/actions'
 import { addStyle } from './api/actions'
 
